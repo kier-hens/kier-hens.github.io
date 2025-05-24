@@ -1,0 +1,164 @@
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+// VARIABLES
+
+$bodywidth: 1000px;
+$gap: 2rem;
+$small-gap: 0.5rem;
+$mobile: 768px;
+
+$text: #aed;
+$background: #00203f;
+$accent: #46d5;
+$a-opaque: #46d9;
+
+$headerfont: 'Fraunces', serif;
+$bodyfont: 'Overpass', sans-serif;
+$bodyweight: 300;
+
+$simpleborder: 1px solid $text;
+
+// MIXINS
+
+@mixin red {
+    border: 1px red solid;
+    box-sizing: border-box;
+}
+
+@mixin nospace {
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin simpleborder {
+    border: none;
+    border-bottom: $simpleborder;
+}
+
+// GLOBAL STYLES
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $bodyfont;
+    font-weight: $bodyweight;
+    max-width: $bodywidth;
+    margin: auto;
+    padding: 2rem;
+    color: $text;
+    background-color: $background;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $headerfont;
+    @include nospace();
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 3rem;
+}
+
+h3 {
+    font-weight: 800;
+    font-style: italic;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+hr {
+    @include simpleborder();
+}
+
+.about,
+.worksamples {
+    margin: 2rem 0;
+}
+
+// ABOUT SECTION
+
+.about a {
+    border: $simpleborder;
+    border-radius: 1rem;
+    padding: 0.2rem 0.75rem;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $text;
+        color: $background;
+    }
+}
+
+// PROJECT
+
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gap;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.projecttext {
+    display: flex;
+    flex-direction: column;
+    gap: $small-gap;
+
+    >* {
+        @include simpleborder();
+        padding-bottom: 0.5rem;
+    }
+}
+
+.projecttags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $small-gap;
+}
+
+.tag {
+    font-size: 0.85rem;
+
+    &:not(:last-child)::after {
+        content: ",";
+    }
+}
+
+.projectimages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: $small-gap;
+    align-content: start;
+}
+
+.projectthumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    @include simpleborder();
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
