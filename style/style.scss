@@ -3,7 +3,7 @@
 
 // VARIABLES
 
-$bodywidth: 1000px;
+$bodywidth: 900px;
 $gap: 2rem;
 $small-gap: 0.5rem;
 $mobile: 768px;
@@ -72,35 +72,70 @@ h3 {
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-        text-decoration: underline;
-    }
-}
-
-hr {
-    @include simpleborder();
-}
-
-.about,
-.worksamples {
-    margin: 2rem 0;
-}
-
-// ABOUT SECTION
-
-.about a {
     border: $simpleborder;
     border-radius: 1rem;
     padding: 0.2rem 0.75rem;
     text-decoration: none;
+    transition: .15s all ease-in-out;
+    color: $text;
 
     &:hover {
         background-color: $text;
         color: $background;
+    }
+
+    hr {
+        @include simpleborder();
+    }
+}
+
+.nonewline {
+    white-space: nowrap;
+
+    @media (max-width: $mobile) {
+        white-space: normal;
+    }
+}
+
+// Center About
+.about {
+    // @include red;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+// Navigation Section
+
+.nav {
+    background-color: $background;
+    border-top: 1px solid $text;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+
+    .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: $bodywidth;
+        margin: 0 auto;
+        padding: 1rem 2em;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .copyright {
+        color: $text;
+        margin: 0;
     }
 }
 
@@ -161,4 +196,11 @@ hr {
     &:hover {
         transform: scale(1.05);
     }
+}
+
+// Social Links
+.sociallinks {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
