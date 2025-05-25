@@ -48,7 +48,7 @@ body {
     font-weight: $bodyweight;
     max-width: $bodywidth;
     margin: auto;
-    padding: 2rem;
+    padding: 4rem 0;
     color: $text;
     background-color: $background;
 }
@@ -103,7 +103,7 @@ a {
     display: flex;
     gap: 1em;
     flex-direction: column;
-    height: 80vh;
+    height: 75vh;
     justify-content: center;
     align-items: flex-start;
 }

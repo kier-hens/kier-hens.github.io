@@ -8,7 +8,7 @@ body {
   font-weight: 300;
   max-width: 900px;
   margin: auto;
-  padding: 2rem;
+  padding: 4rem 0;
   color: #aed;
   background-color: #00203f;
 }
@@ -63,7 +63,7 @@ a hr {
   display: flex;
   gap: 1em;
   flex-direction: column;
-  height: 80vh;
+  height: 75vh;
   justify-content: center;
   align-items: flex-start;
 }
