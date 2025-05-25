@@ -103,7 +103,7 @@ a {
     display: flex;
     gap: 1em;
     flex-direction: column;
-    height: 75vh;
+    height: 72vh;
     justify-content: center;
     align-items: flex-start;
 }
@@ -121,10 +121,14 @@ a {
     .nav-content {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         max-width: $bodywidth;
         margin: 0 auto;
         padding: 1rem 2em;
+
+        @media (max-width: $mobile) {
+            gap: .5em;
+            flex-direction: column;
+        }
     }
 
     .nav-links {
@@ -136,6 +140,10 @@ a {
     .copyright {
         color: $text;
         margin: 0;
+
+         @media (max-width: $mobile) {
+            display: none;
+        }
     }
 }
 

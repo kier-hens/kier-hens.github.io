@@ -63,7 +63,7 @@ a hr {
   display: flex;
   gap: 1em;
   flex-direction: column;
-  height: 75vh;
+  height: 72vh;
   justify-content: center;
   align-items: flex-start;
 }
@@ -79,10 +79,15 @@ a hr {
 .nav .nav-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   max-width: 900px;
   margin: 0 auto;
   padding: 1rem 2em;
+}
+@media (max-width: 768px) {
+  .nav .nav-content {
+    gap: 0.5em;
+    flex-direction: column;
+  }
 }
 .nav .nav-links {
   display: flex;
@@ -92,6 +97,11 @@ a hr {
 .nav .copyright {
   color: #aed;
   margin: 0;
+}
+@media (max-width: 768px) {
+  .nav .copyright {
+    display: none;
+  }
 }
 
 .project {
