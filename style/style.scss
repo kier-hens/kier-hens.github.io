@@ -48,7 +48,7 @@ body {
     font-weight: $bodyweight;
     max-width: $bodywidth;
     margin: auto;
-    padding: 4rem 0;
+    padding: 4rem 2rem;
     color: $text;
     background-color: $background;
 }
@@ -92,7 +92,7 @@ a {
 .nonewline {
     white-space: nowrap;
 
-    @media (max-width: $mobile) {
+    @media (max-width: 450px) {
         white-space: normal;
     }
 }
